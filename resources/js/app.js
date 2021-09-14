@@ -20,7 +20,7 @@ library.add(faPlusSquare, faBackward, faTrash, faEdit, faBell);
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
-axios.defaults.baseURL = "https://infinite-meadow-28643.herokuapp.com/";
+axios.defaults.baseURL = "https://infinite-meadow-28643.herokuapp.com";
 
 import Coin from "./vue/coin.vue";
 import Coins from "./vue/coins.vue";
