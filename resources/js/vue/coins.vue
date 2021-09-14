@@ -57,7 +57,7 @@ export default {
         getList() {
             this.loading = true;
             axios
-                .get("https://infinite-meadow-28643.herokuapp.com/api/")
+                .get("/api/")
                 .then(response => {
                     this.currencies = response.data;
                     this.loading = false;
