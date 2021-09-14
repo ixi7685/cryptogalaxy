@@ -184,6 +184,7 @@
 </template>
 
 <script>
+console.log(window)
 export default {
     data: function() {
         return {
@@ -208,7 +209,7 @@ export default {
         getCoin() {
             console.log(this.$route.params.id);
             axios
-                .get(`api/${this.$route.params.id}`)
+                .get(`https://infinite-meadow-28643.herokuapp.com/api/${this.$route.params.id}`)
                 .then(response => {
                     this.alerts = response.data;
                     this.loading = false;
@@ -223,7 +224,7 @@ export default {
             this.showModal = true;
             this.currentKey = key;
             axios
-                .post(`api/${this.$route.params.id}/${this.currentKey}/edit`, {
+                .post(`https://infinite-meadow-28643.herokuapp.com/api/${this.$route.params.id}/${this.currentKey}/edit`, {
                     key : this.currentKey
                 })
                 .then(response => {
@@ -242,7 +243,7 @@ export default {
 
             axios
                 .post(
-                    `api/${this.$route.params.id}/${this.currentKey}/update`,
+                    `https://infinite-meadow-28643.herokuapp.com/api/${this.$route.params.id}/${this.currentKey}/update`,
                     {
                         id: this.currentKey,
                         name: this.alert.name,
@@ -265,7 +266,7 @@ export default {
             this.currentKey = key;
             if(confirm("Do you really want to delete?")){
             axios
-                .delete(`api/${this.currentKey}/delete`, {
+                .delete(`https://infinite-meadow-28643.herokuapp.com/api/${this.currentKey}/delete`, {
                     id: this.currentKey
                 })
                 .then(response => {
@@ -287,7 +288,7 @@ export default {
             this.showModal = false;
             
             axios
-                .post(`api/${this.$route.params.id}/store`, {
+                .post(`https://infinite-meadow-28643.herokuapp.com/api/${this.$route.params.id}/store`, {
                     name: this.$route.params.name,
                     price: this.price
                 })
