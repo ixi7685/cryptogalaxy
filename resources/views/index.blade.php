@@ -27,5 +27,5 @@
     </div>
     
     </body>
-    <script src="{{ mix('/js/app.js')}}">  </script> 
+    <script src="{{ mix('https://infinite-meadow-28643.herokuapp.com/js/app.js')}}">  </script> 
 </html>
