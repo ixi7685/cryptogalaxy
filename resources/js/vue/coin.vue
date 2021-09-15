@@ -212,7 +212,6 @@ export default {
                 .then(response => {
                     this.alerts = response.data;
                     this.loading = false;
-                    this.alertMinPrice()
                 })
                 .catch(error => {
                     console.log(error);
@@ -223,7 +222,7 @@ export default {
             this.showModal = true;
             this.currentKey = key;
             axios
-                .post(`https://infinite-meadow-28643.herokuapp.com/api/${this.$route.params.id}/${this.currentKey}/edit`, {
+                .post(`/api/${this.$route.params.id}/${this.currentKey}/edit`, {
                     key : this.currentKey
                 })
                 .then(response => {
